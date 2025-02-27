@@ -1,3 +1,5 @@
+package LabFolder;
+
 public class BloxburgGame {
     public static void main(String args[]) {
         Business pizzaPlace = new Business("John's Pizza", "John", 5000);

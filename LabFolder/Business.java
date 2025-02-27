@@ -9,6 +9,7 @@ public class Business {
 
     private Employee employee; 
 
+    // Overloaded Constuctors
     public Business(String name) {
         this(name, "Unknown", 0);
     }
@@ -21,7 +22,7 @@ public class Business {
         this.name = name;
         this.owner = owner;
         this.funds = startingFunds;
-        this.employee = null;
+        this.employee = null; // This shows that no employee will initially be there until inputed
         totalBusinesses++;
     }
 
@@ -41,10 +42,12 @@ public class Business {
         return totalBusinesses;
     }
 
+    // This block hires a new employee, but replaces if there was a previous employee
     public void hireEmployee(String name, String role, double salary) {
         this.employee = new Employee(name, role, salary);
     }
 
+    // This block pays the salary if the employee exist, otherwise there will be no pay
     public void paySalary() {
         if (employee == null) {
             System.out.println("No employee to pay!");
@@ -59,12 +62,14 @@ public class Business {
         }
     }
 
+    // This block applies the taxes to the funds 
     public void applyTaxes() {
         double taxAmount = funds * TAX_RATE;
         funds -= taxAmount;
         System.out.println("Taxes applied: $" + taxAmount);
     }
 
+    // This block displays business info
     public void displayBusinessInfo() {
         System.out.println("\nBusiness Name: " + name);
         System.out.println("Owner: " + owner);
@@ -76,6 +81,7 @@ public class Business {
         }
     }
 
+    // Nested Employee class
     class Employee {
         private String name;
         private String role;

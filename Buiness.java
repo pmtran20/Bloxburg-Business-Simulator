@@ -1,3 +1,5 @@
+package LabFolder;
+
 public class Business {
     private String name;
     private String owner;
